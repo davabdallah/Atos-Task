@@ -1,0 +1,20 @@
+	1. switch to Jenkins namespace
+		Ø kubectl config set-context --current --namespace=jenkins
+	2. Create Storage Class , PV and PVC for jenkins
+    Ø Refert to SC-Jenkins, PV-Jenkins, PVC-Jenkins yaml files in the same directory 
+	3. Create values.yaml and jenkins-casc.yaml
+    Ø Refert to values yaml files in the same directory
+	4. Create PV for jenkins pv-jenkins >> VSC file
+	5. switch to Jenkins namespace
+		Ø kubectl config set-context --current --namespace=jenkins
+	6. Install Jenkins using helm
+		Ø helm repo add jenkins https://charts.jenkins.io
+		Ø helm repo update
+		Ø helm install jenkins jenkins/jenkins -f jenkins-values.yaml --namespace jenkins
+	7. Expose the Jenkins service to access
+		Ø kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
+	8. Assign an external IP by edit the jenkins service to be LoadBalancer
+		Ø kubectl edit svc jenkins
+		Ø kubectl get svc  jenkins
+	9. Retrieve the initial admin password  
+		Ø kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo
