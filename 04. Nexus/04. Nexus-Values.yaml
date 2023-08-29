@@ -1,0 +1,17 @@
+nexus:
+  nexusDockerEnabled: false
+
+persistence:
+ existingClaim: nexus-pvc
+
+nexus3:
+  nexusDockerEnabled: true
+
+nexus3.blobstore:
+  type: kubernetes
+
+data:
+  data:
+    enabled: true
+  nexus-data:
+    enabled: true
