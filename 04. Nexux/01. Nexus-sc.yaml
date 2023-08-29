@@ -1,5 +1,0 @@
-kind: StorageClass
-metadata:
-  name: nexus-sc
-provisioner: kubernetes.io/no-provisioner
-volumeBindingMode: WaitForFirstConsumer
