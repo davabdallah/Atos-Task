@@ -7,22 +7,20 @@
 	3. Create values.yaml and jenkins-casc.yaml
    		 Ø Refert to values yaml files in the same directory
 	
-	4. Switch to Jenkins namespace
-		Ø kubectl config set-context --current --namespace=jenkins
 
-	6. Install Jenkins using helm
+	4. Install Jenkins using helm
 		Ø helm repo add jenkins https://charts.jenkins.io
 		Ø helm repo update
 		Ø helm install jenkins jenkins/jenkins -f jenkins-values.yaml --namespace jenkins
 
-	7. Expose the Jenkins service to access
+	5. Expose the Jenkins service to access
 		Ø kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
 
-	8. Assign an external IP by edit the jenkins service to be LoadBalancer
+	6. Assign an external IP by edit the jenkins service to be LoadBalancer
 		Ø kubectl edit svc jenkins
 		Ø kubectl get svc  jenkins
 
-	9. Retrieve the initial admin password  
+	7. Retrieve the initial admin password  
 		Ø kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo
 
 troubleshooting Tips:
@@ -30,3 +28,7 @@ troubleshooting Tips:
 		Ø sudo chmod 644 /var/lib/kubelet/config.yaml
 
     # Make Sure All Instance in the same VPC and can connect each other
+
+    # if you face any errors you get the logs and the describtion of the faild pods
+		Ø kubectl logs jenkins-0 -c init -n jenkins
+		Ø kubectl decribe pods jenkins-0
