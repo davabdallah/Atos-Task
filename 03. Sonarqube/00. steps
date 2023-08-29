@@ -17,4 +17,4 @@
 
 Troubleshooting Tips:
     # Make sure that you give a right permission to the local volume files
-      Ø sudo chmod 777 -R /data/sonarqube
+      Ø sudo chmod 777 -R /tmp/sonarqube
