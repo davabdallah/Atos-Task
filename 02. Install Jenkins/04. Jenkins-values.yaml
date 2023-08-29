@@ -1,0 +1,16 @@
+controller:
+  adminUser: admin
+  adminPassword: P@ssw0rd
+  jenkinsHome: /var/jenkins_home
+  installPlugins:
+    - configuration-as-code
+  configScripts:
+    - |
+      location: ${JENKINS_HOME}/jenkins-casc.yaml
+      script: |
+        jenkins.configure { it ->
+          def casc = new File("${JENKINS_HOME}/jenkins-casc.yaml")
+          it.configure(casc.text)
+        }
+persistence:
+ existingClaim: jenkins-pvc
