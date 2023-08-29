@@ -12,21 +12,27 @@ Please note that a valid credit card will be needed to activate the offer, howev
 
 3. Create the following namespaces on the cluster.
   a.  jenkins: to be used for Jenkins’ installation and its on-demand agents.
+
   b. sonarqube: to be used for SonarQube’s installation.
+  
   c. nexus: to be used for Nexus’ installation.
+  
   d. app-dev: to be used as the Dev environment for the sample app.
+  
   e. app-tst: to be used as the Test environment for the sample app.
+  
   f. app-prd: to be used as the Prod environment for the sample app.
+  
 
-4. Install Jenkins using the official helm chart and the official LTS image, all Jenkins configurations should be automated (configuration as code), the installation should use persistence volume.
+5. Install Jenkins using the official helm chart and the official LTS image, all Jenkins configurations should be automated (configuration as code), the installation should use persistence volume.
 
-5. Install SonarQube developer edition using the official helm chart and the official LTS image. The installation should be persistent as well and all components’ setups should be automated following also the 
+6. Install SonarQube developer edition using the official helm chart and the official LTS image. The installation should be persistent as well and all components’ setups should be automated following also the 
    configuration as code concept.
   a. Please note that in order to obtain a developer edition you may need to contact SonarSource to provide a 14-day trail license.
 
-6. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
+7. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
 
-7. Build and implement your pipeline for Spring PetClinic Sample Application which should be hosted on your GitHub account. 
+8. Build and implement your pipeline for Spring PetClinic Sample Application which should be hosted on your GitHub account. 
 Your implementation should showcase the following:
   a. Trunk based development branching strategy. 
   b. Static code analysis (SCA) for every developer change, this should include unit test execution and code coverage report. SonarQube quality gates should stop changes that are below the configured levels. 
@@ -37,10 +43,10 @@ Your implementation should showcase the following:
   g. Between each deployment stage add a stage to simulate the execution of the respective automated tests (regression tests, integration tests, and load and performance tests). 
   h. Your pipeline should showcase deploy-on-green method.
 
-8. All your deployments should be done using the same custom Helm chart. 
+9. All your deployments should be done using the same custom Helm chart. 
   This chart should be modular and configurable according to each environment’s different configurations. Making sure that all applications’ components are covered.
 
-9. You should assess and understand your applications structure and include the needed Kubernetes resources accordingly in your Helm chart. 
+10. You should assess and understand your applications structure and include the needed Kubernetes resources accordingly in your Helm chart. 
   Making sure that the properties that will change between each environment should be covered in your configurations. Your application should be accessible via an HTTP URL which should be different for each environment.
 
 10.All your scripts and automation should be hosted on a separate GitHub repository.
