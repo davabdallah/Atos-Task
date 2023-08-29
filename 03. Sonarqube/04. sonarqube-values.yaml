@@ -1,1 +1,13 @@
-
+persistence:
+ existingClaim: sonarqube-pvc
+postgresql:
+  enabled: true
+  postgresqlUsername: sonar
+  postgresqlPassword: sonar
+  postgresqlDatabase: sonar
+  persistence:
+   existingClaim: sonarqube-pvc
+   volumePermissions:
+      enabled: true
+sonarqube:
+  sonar.web.javaOpts: "-Xmx2G -Xms1G"
