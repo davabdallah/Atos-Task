@@ -1,2 +1,73 @@
 # Atos-Task
 This is to document Atos Task step by step
+
+# The Task
+Task Description
+
+1. Create a Kubernetes cluster on Google cloud utilizing the $300 free trial quota for 90 days. 
+The cluster should be self-managed with the minimum initial 3 nodes (6 cores and 12GB memory). No special requirements or configurations are needed. 
+Please note that a valid credit card will be needed to activate the offer, however, no extra costs will be incurred after the trial ends.
+
+2. Connect to your cluster using a Cloud Shell machine to run the deployments from and manage the applications. 
+
+3. Create the following namespaces on the cluster.
+  a.  jenkins: to be used for Jenkins’ installation and its on-demand agents.
+  b. sonarqube: to be used for SonarQube’s installation.
+  c. nexus: to be used for Nexus’ installation.
+  d. app-dev: to be used as the Dev environment for the sample app.
+  e. app-tst: to be used as the Test environment for the sample app.
+  f. app-prd: to be used as the Prod environment for the sample app.
+
+4. Install Jenkins using the official helm chart and the official LTS image, all Jenkins configurations should be automated (configuration as code), the installation should use persistence volume.
+
+5. Install SonarQube developer edition using the official helm chart and the official LTS image. The installation should be persistent as well and all components’ setups should be automated following also the 
+   configuration as code concept.
+  a. Please note that in order to obtain a developer edition you may need to contact SonarSource to provide a 14-day trail license.
+
+6. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
+
+7. Build and implement your pipeline for Spring PetClinic Sample Application which should be hosted on your GitHub account. 
+Your implementation should showcase the following:
+  a. Trunk based development branching strategy. 
+  b. Static code analysis (SCA) for every developer change, this should include unit test execution and code coverage report. SonarQube quality gates should stop changes that are below the configured levels. 
+  c. Versioning strategy utilizing GitHub releasing and tagging capabilities. 
+  d. Build your containerized application and push it to a docker registry hosted on your Nexus installation. 
+  e. Deploy your application to separate namespaces on your Kubernetes cluster, each namespace represents an environment (Dev, Test and Prod).
+  f. After each deployment an automated smoke test should be done to verify the application’s health.
+  g. Between each deployment stage add a stage to simulate the execution of the respective automated tests (regression tests, integration tests, and load and performance tests). 
+  h. Your pipeline should showcase deploy-on-green method.
+
+8. All your deployments should be done using the same custom Helm chart. 
+  This chart should be modular and configurable according to each environment’s different configurations. Making sure that all applications’ components are covered.
+
+9. You should assess and understand your applications structure and include the needed Kubernetes resources accordingly in your Helm chart. 
+  Making sure that the properties that will change between each environment should be covered in your configurations. Your application should be accessible via an HTTP URL which should be different for each environment.
+
+10.All your scripts and automation should be hosted on a separate GitHub repository.
+
+11.Your application’s configurations should be hosted on a separate GitHub repository as well. 
+  Considering separating the different configurations for the different environments to ensure accessibility as well as organizing them. 
+  Your pipeline should apply any configuration changes done on this repository.
+
+12.Your Jenkins setup should utilize Kubernetes on-demand agents that are at least:
+a. One for maven builds.
+b. One for docker builds.
+c. One for Helm deployments.
+
+13.Make sure that each different stage runs on the agent with the required capabilities.
+
+# Guidelines
+This section includes some guidelines while building your solution and things that you may or must consider. 
+You must consider using the following:
+- Pipeline as code.
+- GitHub branch protection rules. 
+- Pull requests. 
+- GitHub tags.
+- Jenkins multi-branch jobs.
+- SonarQube project to show reports of the code.
+- SonarQube pull request decoration.
+- SonarQube quality gates.
+- Ensure peer review is done.
+- Ensure that the changes pass the SCA checks before continuing the pipeline.
+- Jenkins Kubernetes on-demand agents.
+- Assign specific resources for all your applications.
