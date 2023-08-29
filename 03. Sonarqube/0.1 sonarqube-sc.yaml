@@ -1,0 +1,5 @@
+kind: StorageClass
+metadata:
+  name: sonarqube-sc
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
