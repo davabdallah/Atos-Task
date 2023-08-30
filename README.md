@@ -1,10 +1,10 @@
 # Atos-Task
-This is to document Atos Task step by step
+This is to document the Atos Task step-by-step
 
 
 ## Task Description
 
-1. Create a Kubernetes cluster on Google cloud utilizing the $300 free trial quota for 90 days.
+1. Create a Kubernetes cluster on Google Cloud utilizing the $300 free trial quota for 90 days.
     
 > The cluster should be self-managed with the minimum initial 3 nodes (6 cores and 12GB memory). No special requirements or configurations are needed.
 
@@ -16,21 +16,21 @@ This is to document Atos Task step by step
     > jenkins: to be used for Jenkins’ installation and its on-demand agents.
 
     > sonarqube: to be used for SonarQube’s installation.
-  
-  c. nexus: to be used for Nexus’ installation.
-  
-  d. app-dev: to be used as the Dev environment for the sample app.
-  
-  e. app-tst: to be used as the Test environment for the sample app.
-  
-  f. app-prd: to be used as the Prod environment for the sample app.
+
+    > nexus: to be used for Nexus’ installation.
+    
+    > app-dev: to be used as the Dev environment for the sample app.
+    
+    > app-test: to be used as the Test environment for the sample app.
+    
+    > app-prd: to be used as the Prod environment for the sample app.
   
 
-5. Install Jenkins using the official helm chart and the official LTS image, all Jenkins configurations should be automated (configuration as code), the installation should use persistence volume.
+4. Install Jenkins using the official helm chart and the official LTS image, all Jenkins configurations should be automated (configuration as code), the installation should use persistence volume.
 
-6. Install SonarQube developer edition using the official helm chart and the official LTS image. The installation should be persistent as well and all components’ setups should be automated following also the 
+5. Install SonarQube developer edition using the official helm chart and the official LTS image. The installation should be persistent as well and all components’ setups should be automated following also the 
    configuration as code concept.
-  a. Please note that in order to obtain a developer edition you may need to contact SonarSource to provide a 14-day trail license.
+    > Please note that in order to obtain a developer edition you may need to contact SonarSource to provide a 14-day trail license.
 
 7. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
 
