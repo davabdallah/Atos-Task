@@ -12,9 +12,15 @@
 	Ø helm repo update
 	Ø helm install sonarqube sonarqube/sonarqube -f sonarqube-values.yaml --namespace sonarqube
 
-5. Expose the Nexus service to access
+5. Expose the Sonarqube service to access
 	Ø kubectl port-forward service/sonarqube-sonarqube 9000:9000 --namespace sonarqube
+	
+6. Configure Ingress to be accessable outside
+	Ø kubectl apply -f sonarqube-ingress.yaml
+	Ø Refert to sonarqube-ingress.yaml file in the same directory
 
 Troubleshooting Tips:
     # Make sure that you give a right permission to the local volume files
      	 Ø sudo chmod 777 -R /tmp/sonarqube
+	
+     # The default username and Password is admin admin
