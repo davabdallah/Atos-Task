@@ -20,7 +20,9 @@
 	Ø Refert to nexus-ingress.yaml file in the same directory
 	# Add in hostes file the workernode public IP and the host name
 	# curl -kv -H "Host: nexus.atostask.com" http://"workernodeprivateip
-
+7. get the admin password
+	Ø kubectl exec --stdin --tty nexus-nexus-repository-manager-5cdf557cb5-ncgnp  -- /bin/bash
+	Ø cat /nexus-data/admin.password 
 Troubleshooting Tips:
     # Make sure that you give a right permission to the local volume files
      	 Ø sudo chmod 777 -R /data/nexux/
