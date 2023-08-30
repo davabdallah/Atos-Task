@@ -1,17 +1,8 @@
 nexus:
-  nexusDockerEnabled: false
+  nexusDockerHost: "nexus.local"
+  security:
+    enabled: true
+    adminPassword: P@ssw0rd
 
 persistence:
  existingClaim: nexus-pvc
-
-nexus3:
-  nexusDockerEnabled: true
-
-nexus3.blobstore:
-  type: kubernetes
-
-data:
-  data:
-    enabled: true
-  nexus-data:
-    enabled: true
