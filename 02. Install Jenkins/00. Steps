@@ -19,7 +19,7 @@
 		Ø kubectl apply -f jenkins-ingress.yaml
 		Ø Refert to jenkins-ingress.yaml file in the same directory
 		# add in hostes file the workernode public IP and the host name
-		
+		# curl -kv -H "Host: jenkins.atostask.com" http://"workernodeprivateip		
 
 	7. Retrieve the initial admin password  
 		Ø kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo
