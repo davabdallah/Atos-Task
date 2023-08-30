@@ -18,6 +18,7 @@
 6. Configure Ingress to be accessable outside
 	Ø kubectl apply -f sonarqube-ingress.yaml
 	Ø Refert to sonarqube-ingress.yaml file in the same directory
+	# Add in hostes file the workernode public IP and the host name
 
 Troubleshooting Tips:
     # Make sure that you give a right permission to the local volume files
