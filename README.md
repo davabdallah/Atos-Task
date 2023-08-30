@@ -7,14 +7,15 @@ This is to document Atos Task step by step
 1. Create a Kubernetes cluster on Google cloud utilizing the $300 free trial quota for 90 days.
     
 > The cluster should be self-managed with the minimum initial 3 nodes (6 cores and 12GB memory). No special requirements or configurations are needed.
+
 > Please note that a valid credit card will be needed to activate the offer, however, no extra costs will be incurred after the trial ends.
 
 2. Connect to your cluster using a Cloud Shell machine to run the deployments from and manage the applications. 
 
-4. Create the following namespaces on the cluster.
-  a.  jenkins: to be used for Jenkins’ installation and its on-demand agents.
+3. Create the following namespaces on the cluster.
+    > jenkins: to be used for Jenkins’ installation and its on-demand agents.
 
-  b. sonarqube: to be used for SonarQube’s installation.
+    > sonarqube: to be used for SonarQube’s installation.
   
   c. nexus: to be used for Nexus’ installation.
   
