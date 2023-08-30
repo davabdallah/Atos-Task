@@ -1,0 +1,14 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: nexus-ingress
+  namespace: nexus
+spec:
+  virtualhost:
+    fqdn: nexus.atostask.com
+  routes:
+    - conditions:
+      - prefix: /
+      services:
+        - name: nexus-nexus-repository-manager
+          port: 8001
