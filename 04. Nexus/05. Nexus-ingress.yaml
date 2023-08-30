@@ -11,4 +11,4 @@ spec:
       - prefix: /
       services:
         - name: nexus-nexus-repository-manager
-          port: 8001
+          port: 8081
