@@ -18,6 +18,7 @@
 	6. Configure Ingress to be accessable outside
 		Ø kubectl apply -f jenkins-ingress.yaml
 		Ø Refert to jenkins-ingress.yaml file in the same directory
+		# add in hostes file the workernode public IP and the host name
 		
 
 	7. Retrieve the initial admin password  
