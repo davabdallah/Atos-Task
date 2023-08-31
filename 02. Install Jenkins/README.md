@@ -20,24 +20,27 @@ kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
 ```
 ### 6. Configure Ingress to be accessible outside
 - Refer to jenkins-ingress.yaml file in the same directory
-- Add in the hosts file the worker node public IP and the hostname
-      curl -kv -H "Host: jenkins.atostask.com" http://"workernodeprivateip		
-
-### 7. Retrieve the initial admin password  
-      kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo
-
+- Add in the hostsfile the workernode public IP and the hostname as configured in ingress file
+```console
+curl -kv -H "Host: jenkins.atostask.com" http://"workernodeprivateip		
+```
+### 7. Retrieve the initial admin password
+```console
+kubectl exec --namespace jenkins -it svc/jenkins -c jenkins -- /bin/cat /run/secrets/additional/chart-admin-password && echo
+```
 #### Troubleshooting Tips:
 
 - Make Sure All Instances in the same VPC and can connect to each other
   
 - Make sure that you give the correct permission to the config file 
-
- 
-      sudo chmod 644 /var/lib/kubelet/config.yaml
-
+```console
+ sudo chmod 644 /var/lib/kubelet/config.yaml
+```
 - If you face any errors you get the logs and the description of the failed pods
-
-       kubectl logs jenkins-0 -c init -n Jenkins
+```console
+kubectl logs jenkins-0 -c init -n Jenkins
+```
 - and
-  
-       kubectl decribe pods jenkins-0
+```console
+kubectl decribe pods jenkins-0
+```
