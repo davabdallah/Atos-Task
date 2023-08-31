@@ -8,17 +8,8 @@ kubectl config set-context --current --namespace=jenkins
 ```
 
 ### 2. Create Storage Class, PV and PVC for Jenkins
-- Refer to jenkins-sc.yaml, jenkins-PV.yaml, Jenkins-PVC.yaml files in the same directory
-- jenkins-sc.yaml
-
-  ```yaml
-  apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: jenkins-sc
-provisioner: kubernetes.io/no-provisioner
-volumeBindingMode: WaitForFirstConsumer
-```
+- Refer to [jenkins-sc.yaml]([https://github.com/carlossg](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/01.%20Jenkins.-SC.yaml)).
+jenkins-sc.yaml, jenkins-PV.yaml, Jenkins-PVC.yaml files in the same directory
 
 ### 3. Create values.yaml and jenkins-casc.yaml
 - Refer to values yaml files in the same directory
