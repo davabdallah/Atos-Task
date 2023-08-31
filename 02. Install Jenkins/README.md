@@ -2,7 +2,10 @@
 
 ### 1. Switch to the Jenkins namespace
 
-      kubectl config set-context --current --namespace=jenkins
+      
+      ```console
+hkubectl config set-context --current --namespace=jenkins
+```
 
 ### 2. Create Storage Class, PV and PVC for Jenkins
 - Refer to jenkins-sc.yaml, jenkins-PV.yaml, Jenkins-PVC.yaml files in the same directory
