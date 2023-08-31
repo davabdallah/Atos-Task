@@ -5,13 +5,10 @@
 kubectl config set-context --current --namespace=jenkins
 ```
 ### 2. Create Storage Class, PV and PVC for Jenkins
-
-kubectl apply -f [Jenkins-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/01.%20Jenkins.-SC.yaml)
-kubect apply -f [Jenkins-PV.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/02.%20Jenkins-PV.yaml),
-Kubectl apply -f [Jenkins-PVC.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/03.%20Jenkins-PVC.yaml) files in the same directory
+-  You can check the files [Jenkins-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/01.%20Jenkins.-SC.yaml), [Jenkins-PV.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/02.%20Jenkins-PV.yaml), [Jenkins-PVC.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/03.%20Jenkins-PVC.yaml)  in the same directory
 
 ### 3. Create values.yaml and jenkins-casc.yaml
-- you can check [Jenkins-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
+- You can check [Jenkins-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
 ### 4. Install Jenkins using helm
 ```console 
 helm repo add Jenkins https://charts.jenkins.io
@@ -23,7 +20,7 @@ helm install jenkins jenkins/jenkins -f jenkins-values.yaml --namespace jenkins
 kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
 ```
 ### 6. Configure Ingress to be accessible outside
-- Refer to jenkins-ingress.yaml file in the same directory
+- You can check [jenkins-ingress.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/06.%20Jenkins-ingress.yaml) file in the same directory
 - Add in the hostsfile the workernode public IP and the hostname as configured in ingress file
 ```console
 curl -kv -H "Host: jenkins.atostask.com" http://"workernodeprivateip		
