@@ -20,10 +20,10 @@ helm repo add Jenkins https://charts.jenkins.io
 helm repo update
 helm install jenkins jenkins/jenkins -f jenkins-values.yaml --namespace jenkins
 ```
-
 ### 5. Expose the Jenkins service to access
-      kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
-
+```console
+kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
+```
 ### 6. Configure Ingress to be accessible outside
 - Refer to jenkins-ingress.yaml file in the same directory
 - Add in the hosts file the worker node public IP and the hostname
