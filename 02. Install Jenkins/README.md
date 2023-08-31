@@ -16,9 +16,9 @@ kubectl config set-context --current --namespace=jenkins
 ### 4. Install Jenkins using helm
 
 ```console 
-      helm repo add Jenkins https://charts.jenkins.io
-      helm repo update
-      helm install jenkins jenkins/jenkins -f jenkins-values.yaml --namespace jenkins
+helm repo add Jenkins https://charts.jenkins.io
+helm repo update
+helm install jenkins jenkins/jenkins -f jenkins-values.yaml --namespace jenkins
 ```
 
 ### 5. Expose the Jenkins service to access
