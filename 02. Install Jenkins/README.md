@@ -3,8 +3,8 @@
 ### 1. Switch to the Jenkins namespace
 
       
-      ```console
-hkubectl config set-context --current --namespace=jenkins
+```console
+kubectl config set-context --current --namespace=jenkins
 ```
 
 ### 2. Create Storage Class, PV and PVC for Jenkins
