@@ -5,9 +5,13 @@
 kubectl config set-context --current --namespace=jenkins
 ```
 ### 2. Create Storage Class, PV and PVC for Jenkins
-- Refer to [Jenkins-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/01.%20Jenkins.-SC.yaml), [Jenkins-PV.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/02.%20Jenkins-PV.yaml), [Jenkins-PVC.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/03.%20Jenkins-PVC.yaml) files in the same directory
+```console
+kubectl apply -f [Jenkins-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/01.%20Jenkins.-SC.yaml)
+kubect apply -f [Jenkins-PV.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/02.%20Jenkins-PV.yaml),
+Kubectl apply -f [Jenkins-PVC.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/03.%20Jenkins-PVC.yaml) files in the same directory
+```
 ### 3. Create values.yaml and jenkins-casc.yaml
-- Refer to values yaml files in the same directory
+- you can check [Jenkins-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
 ### 4. Install Jenkins using helm
 ```console 
 helm repo add Jenkins https://charts.jenkins.io
