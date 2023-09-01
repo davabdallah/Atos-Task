@@ -11,7 +11,7 @@ kubectl config set-context --current --namespace=jenkins
 - You can check [Jenkins-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
 ### 4. Install Jenkins using helm
 ```console 
-helm repo add Jenkins https://charts.jenkins.io
+helm repo add jenkins https://charts.jenkins.io
 helm repo update
 helm install jenkins jenkins/jenkins -f jenkins-values.yaml --namespace jenkins
 ```
