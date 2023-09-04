@@ -7,6 +7,12 @@ kubectl config set-context --current --namespace=jenkins
 ### 2. Create Storage Class, PV and PVC for Jenkins
 -  You can check the files [Jenkins-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/01.%20Jenkins.-SC.yaml), [Jenkins-PV.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/02.%20Jenkins-PV.yaml), [Jenkins-PVC.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/03.%20Jenkins-PVC.yaml)  in the same directory
 
+```console
+kubectl apply -f jankins-sc.yaml
+kubectl apply -f jankins-pv.yaml
+kubectl apply -f jankins-pvc.yaml
+```
+
 ### 3. Create values.yaml and jenkins-casc.yaml
 - You can check [Jenkins-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
 ### 4. Install Jenkins using helm
@@ -23,6 +29,7 @@ kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
 - You can check [jenkins-ingress.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/06.%20Jenkins-ingress.yaml) file in the same directory
 - Add in the hostsfile the workernode public IP and the hostname as configured in ingress file
 ```console
+kubectl apply -f jenkins-ingress.yaml
 curl -kv -H "Host: jenkins.atostask.com" http://"workernodeprivateip		
 ```
 ### 7. Retrieve the initial admin password
