@@ -1,8 +1,0 @@
-jenkins:
-  systemMessage: "Automatically configured by CasC"
-  securityRealm:
-    local:
-      allowsSignup: false
-      users:
-        - id: admin
-          password: P@ssw0rd
