@@ -1,13 +1,19 @@
-	1. Create 1 VM "n2-standard-2" for Master node
-	2. Create 3 VMs "n2-standard-2" for Worker nodes
+# The below Steps to Install Kubeadm and create Kubernets cluster 
 
-  3. Run the following on each VM starting with Master Node
-		Ø sudo apt-get update
-		Ø sudo apt-get install -y docker.io
-		
-	4. Install Kubeadm components on each VM:
+### 1. Create 4 VMs (one for Master and three for Worker nodes)
+
+### 2. Install Kubeadm components on each VM
+
+
+```console
+sudo apt-get update
+sudo apt-get install -y docker.io
+kubectl apply -f jankins-pvc.yaml
+```
     a. Install https support
-		Ø sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
+```console		
+   sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
+```
     b. Get kubernetes repo key:
 		Ø curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
     c. Add the Kubernetes package repository
