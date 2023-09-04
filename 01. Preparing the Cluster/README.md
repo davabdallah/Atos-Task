@@ -45,9 +45,8 @@ kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 OR
 kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
 ```
-### 4. Join Worker nodes to the Cluster
+### 4. Join Worker nodes to the Cluster (ex)
 ```console
-ex)
 sudo kubeadm join 10.0.0.9:6443 --token qfx9jy.bl7gkyruwvi857z4 \
 		        --discovery-token-ca-cert-hash sha256:45203ed0d7de1b49a6db2db9885932f6d031fd81f90236079f9361f2610f8d2e 
 ```
