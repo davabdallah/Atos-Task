@@ -8,9 +8,8 @@
 ```console
 sudo apt-get update
 sudo apt-get install -y docker.io
-kubectl apply -f jankins-pvc.yaml
 ```
-    a. Install https support
+   - a. Install https support
 ```console		
    sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
 ```
