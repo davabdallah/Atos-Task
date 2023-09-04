@@ -9,7 +9,7 @@
 sudo apt-get update
 sudo apt-get install -y docker.io
 ```
-   - a. Install https support
+   	- Install https support
 ```console		
    sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
 ```
