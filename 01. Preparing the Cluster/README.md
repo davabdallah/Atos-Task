@@ -4,17 +4,19 @@
 
 ### 2. Install Kubeadm components on each VM
 
-
+- Install Docker
 ```console
 sudo apt-get update
 sudo apt-get install -y docker.io
 ```
 - Install https support
 ```console		
-   sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
+ sudo apt-get update && sudo apt-get install -y apt-transport-https ca-certificates curl
 ```
-    b. Get kubernetes repo key:
-		Ø curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+- Get kubernetes repo key:
+```console	
+ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+```
     c. Add the Kubernetes package repository
 		Ø echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
     d. Install kubeadm 
