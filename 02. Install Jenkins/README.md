@@ -14,7 +14,7 @@ kubectl apply -f jankins-pvc.yaml
 ```
 
 ### 3. Create values.yaml and jenkins-casc.yaml
-- You can check [Jenkins-values.yaml]([https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/04.%20sonarqube-values.yaml) files in the same directory
+- You can check [Jenkins-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/04.%20sonarqube-values.yaml) files in the same directory
 
 ### 4. Install Jenkins using helm
 ```console 
