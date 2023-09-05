@@ -5,11 +5,16 @@
 kubectl config set-context --current --namespace=sonarqube
 ```
 ### 2. Create sonarqube-cs.yaml , sonarqube-pv.yaml and sonarqube-PVC.yaml for Sonarqube
--  You can check the files [sonarqube-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/01.%20sonarqube-sc.yaml) [sonarqube-pv.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/02.%20sonarqube-pv.yaml) [sonarqube-pvc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/03.%20sonarqube.pvc.yaml)
-	
-### Create sonarqube-values.yaml
-- You can find it in the same directory
+- You can check the files [sonarqube-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/01.%20sonarqube-sc.yaml),  [sonarqube-pv.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/02.%20sonarqube-pv.yaml),  [sonarqube-pvc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/03.%20sonarqube.pvc.yaml)
 
+```console
+kubectl apply -f sonarqube-sc.yaml
+kubectl apply -f sonarqube-pv.yaml
+kubectl apply -f sonarqube-pvc.yaml
+```
+
+### 3. Create sonarqube-values.yaml
+- You can check [sonarqube-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
 ### Install SonarQube Developer Edition using helm
 	  helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
 	  helm repo update
