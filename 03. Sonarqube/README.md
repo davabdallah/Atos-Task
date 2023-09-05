@@ -40,7 +40,7 @@ kubectl port-forward service/sonarqube-sonarqube 9000:9000 --namespace sonarqube
 ### 6. Configure Ingress to be accessible externally
 - You can check sonarqube-ingress.yaml file in the same directory
 - Add in the hosts file the worker node public IP and the hostname
- ```console 
+```console 
 curl -kv -H "Host: sonarqube.atostask.com" http://"workernodeprivateip
 ```
 
@@ -49,6 +49,6 @@ curl -kv -H "Host: sonarqube.atostask.com" http://"workernodeprivateip
 - The default username and Password is admin admin
 
 - Make sure that you give the right permission to the local volume files
-
-	  sudo chmod 777 -R /tmp/sonarqube
-
+```console 
+sudo chmod 777 -R /tmp/sonarqube
+```
