@@ -4,15 +4,15 @@ This is to document the Atos Task step-by-step
 
 ## Task Description
 
-1. Create a Kubernetes cluster on Google Cloud utilizing the $300 free trial quota for 90 days.
+    1. Create a Kubernetes cluster on Google Cloud utilizing the $300 free trial quota for 90 days.
     
-> The cluster should be self-managed with the minimum initial 3 nodes (6 cores and 12GB memory). No special requirements or configurations are needed.
+    > The cluster should be self-managed with the minimum initial 3 nodes (6 cores and 12GB memory). No special requirements or configurations are needed.
 
-> Please note that a valid credit card will be needed to activate the offer, however, no extra costs will be incurred after the trial ends.
+    > Please note that a valid credit card will be needed to activate the offer, however, no extra costs will be incurred after the trial ends.
 
-2. Connect to your cluster using a Cloud Shell machine to run the deployments from and manage the applications. 
+    2. Connect to your cluster using a Cloud Shell machine to run the deployments from and manage the applications. 
 
-3. Create the following namespaces on the cluster.
+    3. Create the following namespaces on the cluster.
     > jenkins: to be used for Jenkins’ installation and its on-demand agents.
 
     > sonarqube: to be used for SonarQube’s installation.
@@ -26,15 +26,15 @@ This is to document the Atos Task step-by-step
     > app-prd: to be used as the Prod environment for the sample app.
   
 
-4. Install Jenkins using the official helm chart and the official LTS image, all Jenkins configurations should be automated (configuration as code), the installation should use persistence volume.
+    4. Install Jenkins using the official helm chart and the official LTS image, all Jenkins configurations should be automated (configuration as code), the installation should use persistence volume.
 
-5. Install SonarQube developer edition using the official helm chart and the official LTS image. The installation should be persistent as well and all components’ setups should be automated following also the 
+    5. Install SonarQube developer edition using the official helm chart and the official LTS image. The installation should be persistent as well and all components’ setups should be automated following also the 
    configuration as code concept.
     > Please note that in order to obtain a developer edition you may need to contact SonarSource to provide a 14-day trail license.
 
-6. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
+    6. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
 
-7. Build and implement your pipeline for Spring PetClinic Sample Application which should be hosted on your GitHub account. 
+    7. Build and implement your pipeline for Spring PetClinic Sample Application which should be hosted on your GitHub account. 
 Your implementation should showcase the following:
     > Trunk based development branching strategy.
     
@@ -52,34 +52,34 @@ Your implementation should showcase the following:
     
     > Your pipeline should showcase deploy-on-green method.
 
-8. All your deployments should be done using the same custom Helm chart.
+    8. All your deployments should be done using the same custom Helm chart.
     
     > This chart should be modular and configurable according to each environment’s different configurations. Making sure that all applications’ components are covered.
 
-9. You should assess and understand your applications structure and include the needed Kubernetes resources accordingly in your Helm chart.
+    9. You should assess and understand your applications structure and include the needed Kubernetes resources accordingly in your Helm chart.
     
     > Making sure that the properties that will change between each environment should be covered in your configurations
     
     > Your application should be accessible via an HTTP URL which should be different for each environment.
 
-10. All your scripts and automation should be hosted on a separate GitHub repository.
+    10. All your scripts and automation should be hosted on a separate GitHub repository.
 
-11. Your application’s configurations should be hosted on a separate GitHub repository as well.
+    11. Your application’s configurations should be hosted on a separate GitHub repository as well.
     
     > Considering separating the different configurations for the different environments to ensure accessibility as well as organizing them.
     
     > Your pipeline should apply any configuration changes done on this repository.
 
-12.Your Jenkins setup should utilize Kubernetes on-demand agents that are at least:
+    12.Your Jenkins setup should utilize Kubernetes on-demand agents that are at least:
 
-> a. One for maven builds.
+    > a. One for maven builds.
 
-> b. One for docker builds.
+    > b. One for docker builds.
 
-> c. One for Helm deployments.
+    > c. One for Helm deployments.
 
 
-13.Make sure that each different stage runs on the agent with the required capabilities.
+    13.Make sure that each different stage runs on the agent with the required capabilities.
 
 # Guidelines
 This section includes some guidelines while building your solution and things that you may or must consider. 
