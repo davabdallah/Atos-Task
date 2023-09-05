@@ -6,7 +6,7 @@ kubectl config set-context --current --namespace=nexus
 ```
 
 ### 2. Create Storage Class, PV and PVC for Nexus
-- You can check the files (nexus-sc.yaml)[https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/01.%20Nexus-sc.yaml], (nexus-pv.yaml)[https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/02.%20Nexus-pv.yaml], (nexus-pvc.yaml)[https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/03.%20Nexus-pvc.yaml]
+- You can check the files [nexus-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/01.%20Nexus-sc.yaml), [nexus-pv.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/02.%20Nexus-pv.yaml), [nexus-pvc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/03.%20Nexus-pvc.yaml)
 
 3. Create values.yaml and jenkins-values.yaml
 Refert to nexus-values.yaml file in the same directory
