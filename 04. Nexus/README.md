@@ -7,19 +7,35 @@ kubectl config set-context --current --namespace=nexus
 
 ### 2. Create Storage Class, PV and PVC for Nexus
 - You can check the files [nexus-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/01.%20Nexus-sc.yaml), [nexus-pv.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/02.%20Nexus-pv.yaml), [nexus-pvc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/03.%20Nexus-pvc.yaml)
-
-3. Create values.yaml and jenkins-values.yaml
-Refert to nexus-values.yaml file in the same directory
-
-4. Install Nexus OSS3 using helm
+```console
+kubectl apply -f nexus-sc.yaml
+```
+```console
+kubectl apply -f nexus-pv.yaml
+```
+```console
+kubectl apply -f nexus-pvc.yaml
+```
+### 3. Create nexus-values.yaml
+- You can check [nexus-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/04.%20Nexus-Values.yaml) files in the same directory
+  
+### 4. Install Nexus OSS3 using helm
+```console
 helm repo add sonatype https://sonatype.github.io/helm3-charts
+```
+```console
 helm repo update
+```
+```console
 helm install nexus sonatype/nexus-repository-manager -f nexus-values.yaml --namespace nexus
+```
 
-5. Expose the Nexus service to access
+### 5. Expose the Nexus service to access
+```console
 kubectl port-forward service/nexus-nexus-repository-manager 8081:8081 --namespace nexus
+```
 
-6. Configure Ingress to be accessable outside
+### 6. Configure Ingress to be accessable outside
 kubectl apply -f nexus-ingress.yaml
 Refert to nexus-ingress.yaml file in the same directory
 # Add in hostes file the workernode public IP and the host name
