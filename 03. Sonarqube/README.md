@@ -16,9 +16,16 @@ kubectl apply -f sonarqube-pvc.yaml
 ### 3. Create sonarqube-values.yaml
 - You can check [sonarqube-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
 ### Install SonarQube Developer Edition using helm
-	  helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
-	  helm repo update
-	  helm install sonarqube sonarqube/sonarqube -f sonarqube-values.yaml --namespace sonarqube
+
+```console
+helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
+```
+```console
+helm repo update
+```
+```console
+helm install sonarqube sonarqube/sonarqube -f sonarqube-values.yaml --namespace sonarqube
+```
 
 ### Expose the Sonarqube service to access
 	  kubectl port-forward service/sonarqube-sonarqube 9000:9000 --namespace sonarqube
