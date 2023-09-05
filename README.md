@@ -32,35 +32,36 @@ This is to document the Atos Task step-by-step
    configuration as code concept.
     > Please note that in order to obtain a developer edition you may need to contact SonarSource to provide a 14-day trail license.
 
-7. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
+6. Install Nexus OSS3 using the official helm chart and the official image, all components should be configured as code and the installation should be persistent.
 
-8. Build and implement your pipeline for Spring PetClinic Sample Application which should be hosted on your GitHub account. 
+7. Build and implement your pipeline for Spring PetClinic Sample Application which should be hosted on your GitHub account. 
 Your implementation should showcase the following:
-  a. Trunk based development branching strategy. 
-  b. Static code analysis (SCA) for every developer change, this should include unit test execution and code coverage report. SonarQube quality gates should stop changes that are below the configured levels. 
-  c. Versioning strategy utilizing GitHub releasing and tagging capabilities. 
-  d. Build your containerized application and push it to a docker registry hosted on your Nexus installation. 
-  e. Deploy your application to separate namespaces on your Kubernetes cluster, each namespace represents an environment (Dev, Test and Prod).
-  f. After each deployment an automated smoke test should be done to verify the application’s health.
-  g. Between each deployment stage add a stage to simulate the execution of the respective automated tests (regression tests, integration tests, and load and performance tests). 
-  h. Your pipeline should showcase deploy-on-green method.
+    > Trunk based development branching strategy.
+    > Static code analysis (SCA) for every developer change, this should include unit test execution and code coverage report. SonarQube quality gates should stop changes that are below the configured levels.
+    > Versioning strategy utilizing GitHub releasing and tagging capabilities.
+    > Build your containerized application and push it to a docker registry hosted on your Nexus installation.
+    > Deploy your application to separate namespaces on your Kubernetes cluster, each namespace represents an environment (Dev, Test and Prod).
+    > After each deployment an automated smoke test should be done to verify the application’s health.
+    > Between each deployment stage add a stage to simulate the execution of the respective automated tests (regression tests, integration tests, and load and performance tests).
+    > Your pipeline should showcase deploy-on-green method.
 
-9. All your deployments should be done using the same custom Helm chart. 
-  This chart should be modular and configurable according to each environment’s different configurations. Making sure that all applications’ components are covered.
+9. All your deployments should be done using the same custom Helm chart.
+    > This chart should be modular and configurable according to each environment’s different configurations. Making sure that all applications’ components are covered.
 
-10. You should assess and understand your applications structure and include the needed Kubernetes resources accordingly in your Helm chart. 
-  Making sure that the properties that will change between each environment should be covered in your configurations. Your application should be accessible via an HTTP URL which should be different for each environment.
+11. You should assess and understand your applications structure and include the needed Kubernetes resources accordingly in your Helm chart.
+    > Making sure that the properties that will change between each environment should be covered in your configurations.
+    > Your application should be accessible via an HTTP URL which should be different for each environment.
 
-10.All your scripts and automation should be hosted on a separate GitHub repository.
+10. All your scripts and automation should be hosted on a separate GitHub repository.
 
-11.Your application’s configurations should be hosted on a separate GitHub repository as well. 
-  Considering separating the different configurations for the different environments to ensure accessibility as well as organizing them. 
-  Your pipeline should apply any configuration changes done on this repository.
+11. Your application’s configurations should be hosted on a separate GitHub repository as well. 
+    > Considering separating the different configurations for the different environments to ensure accessibility as well as organizing them. 
+    > Your pipeline should apply any configuration changes done on this repository.
 
 12.Your Jenkins setup should utilize Kubernetes on-demand agents that are at least:
-a. One for maven builds.
-b. One for docker builds.
-c. One for Helm deployments.
+> a. One for maven builds.
+> b. One for docker builds.
+> c. One for Helm deployments.
 
 13.Make sure that each different stage runs on the agent with the required capabilities.
 
