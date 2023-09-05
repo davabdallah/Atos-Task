@@ -4,7 +4,7 @@
 ```console
 kubectl config set-context --current --namespace=sonarqube
 ```
-### 2. Create sonarqube-cs.yaml , sonarqube-pv.yaml and sonarqube-PVC.yaml for Sonarqube
+### 2. Create Storage Class, PV and PVC for Sonarqube
 - You can check the files [sonarqube-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/01.%20sonarqube-sc.yaml),  [sonarqube-pv.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/02.%20sonarqube-pv.yaml),  [sonarqube-pvc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/03.%20sonarqube.pvc.yaml)
 
 ```console
@@ -38,9 +38,12 @@ kubectl port-forward service/sonarqube-sonarqube 9000:9000 --namespace sonarqube
 ```
 	
 ### 6. Configure Ingress to be accessible externally
-- You can check sonarqube-ingress.yaml file in the same directory
+- You can check [sonarqube-ingress.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/05.%20sonarqube-ingress.yaml) file in the same directory
 - Add in the hosts file the worker node public IP and the hostname
-```console 
+```console
+kubectl apply -f sonarqube-ingress.yaml
+```
+```console
 curl -kv -H "Host: sonarqube.atostask.com" http://"workernodeprivateip
 ```
 
