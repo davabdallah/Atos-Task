@@ -7,6 +7,8 @@
 - Install Docker
 ```console
 sudo apt-get update
+```
+```console
 sudo apt-get install -y docker.io
 ```
 - Install https support
@@ -24,7 +26,11 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt
 - Install kubeadm
 ```console
 sudo apt-get update
+```
+```console
 sudo apt-get install -y kubelet kubeadm kubectl
+```
+```console
 sudo apt-mark hold kubeadm kubelet kubectl
 ```
 	
@@ -36,7 +42,11 @@ sudo kubeadm init --pod-network-cidr=10.244.0.0/16
 - Copy admin.conf file to User home directory
 ```console
 mkdir -p $HOME/.kube
+```
+```console
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+```
+```console
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 - Install a Pod network add-on (Master Node)
@@ -53,9 +63,17 @@ sudo kubeadm join 10.0.0.9:6443 --token qfx9jy.bl7gkyruwvi857z4 \
 ### 5. Install helm on (Master Node)
 ```console
 sudo apt update
+```
+```console
 sudo apt upgrade -y
+```
+```console
 wget https://get.helm.sh/helm-v3.12.3-linux-amd64.tar.gz
+```
+```console
 tar -zxvf helm-v3.12.3-linux-amd64.tar.gz
+```
+```console
 sudo mv linux-amd64/helm /usr/local/bin/helm
 ```
 ### 6. Install Ingress Controller
