@@ -36,13 +36,24 @@ kubectl port-forward service/nexus-nexus-repository-manager 8081:8081 --namespac
 ```
 
 ### 6. Configure Ingress to be accessable outside
+- You can check [nexus-ingress.yaml](https://github.com/davabdallah/Atos-Task/blob/main/04.%20Nexus/05.%20Nexus-ingress.yaml) file in the same directory
+- Add in the hosts file the worker node public IP and the hostname
+```console
 kubectl apply -f nexus-ingress.yaml
-Refert to nexus-ingress.yaml file in the same directory
-# Add in hostes file the workernode public IP and the host name
-# curl -kv -H "Host: nexus.atostask.com" http://"workernodeprivateip
-7. get the admin password
+```
+```console
+curl -kv -H "Host: nexus.atostask.com" http://"workernodeprivateip
+```
+
+### 7. get the admin password
+```console
 kubectl exec --stdin --tty nexus-nexus-repository-manager-5cdf557cb5-ncgnp  -- /bin/bash
-cat /nexus-data/admin.password 
-Troubleshooting Tips:
-    # Make sure that you give a right permission to the local volume files
-      sudo chmod 777 -R /data/nexux/
+```
+```console
+cat /nexus-data/admin.password
+```
+### Troubleshooting Tips:
+- Make sure that you give a right permission to the local volume files
+```console
+sudo chmod 777 -R /data/nexux/
+```
