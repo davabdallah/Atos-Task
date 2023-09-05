@@ -72,7 +72,7 @@ Your implementation should showcase the following:
     
     > Your pipeline should apply any configuration changes done on this repository.
 
-12.Your Jenkins setup should utilize Kubernetes on-demand agents that are at least:
+12. Your Jenkins setup should utilize Kubernetes on-demand agents that are at least
 
     > One for maven builds.
 
