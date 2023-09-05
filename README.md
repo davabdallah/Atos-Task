@@ -73,11 +73,11 @@ Your implementation should showcase the following:
 
 12.Your Jenkins setup should utilize Kubernetes on-demand agents that are at least:
 
-    > a. One for maven builds.
+    > One for maven builds.
 
-    > b. One for docker builds.
+    > One for docker builds.
 
-    > c. One for Helm deployments.
+    > One for Helm deployments.
 
 
 13.Make sure that each different stage runs on the agent with the required capabilities.
