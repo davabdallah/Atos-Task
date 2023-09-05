@@ -39,7 +39,8 @@ Your implementation should showcase the following:
 
     > Trunk based development branching strategy.
     
-    > Static code analysis (SCA) for every developer change, this should include unit test execution and code coverage report. SonarQube quality gates should stop changes that are below the configured levels.
+    > Static code analysis (SCA) for every developer change, this should include unit test execution and code coverage report.
+    > SonarQube quality gates should stop changes that are below the configured levels.
     
     > Versioning strategy utilizing GitHub releasing and tagging capabilities.
     
