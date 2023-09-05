@@ -39,6 +39,8 @@ kubectl port-forward service/jenkins 8080:8080 --namespace jenkins
 - Add in the hostsfile the workernode public IP and the hostname as configured in ingress file
 ```console
 kubectl apply -f jenkins-ingress.yaml
+```
+```console
 curl -kv -H "Host: jenkins.atostask.com" http://"workernodeprivateip		
 ```
 ### 7. Retrieve the initial admin password
