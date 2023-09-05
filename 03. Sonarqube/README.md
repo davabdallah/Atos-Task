@@ -19,7 +19,8 @@ kubectl apply -f sonarqube-pvc.yaml
 
 ### 3. Create sonarqube-values.yaml
 - You can check [sonarqube-values.yaml](https://github.com/davabdallah/Atos-Task/blob/main/02.%20Install%20Jenkins/04.%20Jenkins-values.yaml) files in the same directory
-### Install SonarQube Developer Edition using helm
+  
+### 4. Install SonarQube Developer Edition using helm
 
 ```console
 helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
@@ -31,14 +32,17 @@ helm repo update
 helm install sonarqube sonarqube/sonarqube -f sonarqube-values.yaml --namespace sonarqube
 ```
 
-### Expose the Sonarqube service to access
-	  kubectl port-forward service/sonarqube-sonarqube 9000:9000 --namespace sonarqube
+### 5. Expose the Sonarqube service to access
+```console
+kubectl port-forward service/sonarqube-sonarqube 9000:9000 --namespace sonarqube
+```
 	
-### Configure Ingress to be accessible externally
+### 6. Configure Ingress to be accessible externally
 - You can check sonarqube-ingress.yaml file in the same directory
 - Add in the hosts file the worker node public IP and the hostname
-  
-	  curl -kv -H "Host: sonarqube.atostask.com" http://"workernodeprivateip
+ ```console 
+curl -kv -H "Host: sonarqube.atostask.com" http://"workernodeprivateip
+```
 
 #### Troubleshooting Tips:
 
