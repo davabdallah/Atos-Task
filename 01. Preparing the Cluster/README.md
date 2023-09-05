@@ -60,7 +60,7 @@ sudo mv linux-amd64/helm /usr/local/bin/helm
 ```
 ### 6. Install Ingress Controller
 ```console
-kubectl https://projectcontour.io/quickstart/contour.yaml
+kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
 ```
 
 ### 7. Create namespaces as required
