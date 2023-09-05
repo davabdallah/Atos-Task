@@ -1,11 +1,11 @@
 # The below Steps to Install Jenkins using Helm and Enable Ingress
 
-### Switch to SonarQube namespace
-
+### 1. Switch to SonarQube namespace
+```console
 kubectl config set-context --current --namespace=sonarqube
-
-### Create sonarqube-cs.yaml , sonarqube-pv.yaml and sonarqube-PVC.yaml for Sonarqube
-- You can find them in the same directory
+```
+### 2. Create sonarqube-cs.yaml , sonarqube-pv.yaml and sonarqube-PVC.yaml for Sonarqube
+-  You can check the files [sonarqube-sc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/01.%20sonarqube-sc.yaml) [sonarqube-pv.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/02.%20sonarqube-pv.yaml) [sonarqube-pvc.yaml](https://github.com/davabdallah/Atos-Task/blob/main/03.%20Sonarqube/03.%20sonarqube.pvc.yaml)
 	
 ### Create sonarqube-values.yaml
 - You can find it in the same directory
