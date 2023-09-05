@@ -9,7 +9,11 @@ kubectl config set-context --current --namespace=sonarqube
 
 ```console
 kubectl apply -f sonarqube-sc.yaml
+```
+```console
 kubectl apply -f sonarqube-pv.yaml
+```
+```console
 kubectl apply -f sonarqube-pvc.yaml
 ```
 
