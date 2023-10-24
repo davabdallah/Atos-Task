@@ -11,4 +11,4 @@ spec:
     storage: 20Gi
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /tmp/nexux/
+    path: /tmp/nexus/
